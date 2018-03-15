@@ -18,7 +18,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1.5vw 2vw;
     text-decoration: none;
 }
 
@@ -60,8 +60,8 @@ select option[disabled]{
 }
 
 form{
-  margin-bottom: 100px;
-  margin-top: 50px;
+  margin-bottom: 16vw;
+  margin-top: 4vw;
 }
 
 form input{
@@ -72,8 +72,8 @@ form input{
 }
 select{
 
-  height: 30px;
-  font-size: 20px;
+  height: 1.5vw;
+  font-size: 1vw;
 }
 50px
 #review{
@@ -94,7 +94,7 @@ form textarea{
 
 form button{
 
-  margin-top: 50px;
+  margin-top: 2vw;
   font-size: 1vw;
 }
 
@@ -173,7 +173,7 @@ hr{
 
 h2#reviewTitle{
 
-  margin-top: 50px;
+  padding-top: 2vw;
 }
 
 h1{
@@ -195,26 +195,20 @@ h1{
 #starwars {
 
   width: 17vw;
-  position: absolute;
-  left: 20vw;
-  top: 25vw;
+  margin-left: 6vw;
 }
 
 #rat{
 
   width: 17vw;
-  position: absolute;
-  left: 40vw;
-  top: 30vw;
+  margin-left: 3vw;
 
 }
 
 #bee{
 
   width: 17vw;
-  position: absolute;
-  left: 60vw;
-  top: 25vw;
+  margin-left: 3vw;
 }
 
 #bee:hover{
@@ -232,8 +226,21 @@ h1{
 .center{
 
   text-align: center;
-  padding: 50px;
+  padding: 2vw;
+}
 
+#starWarsCenter{
+
+  text-align: center;
+  padding: 2vw;
+  padding-top: 9vw;
+}
+
+.center2{
+
+  text-align: center;
+  padding: 2vw;
+  padding-top: 7vw;
 }
 
 .inputTitle{
@@ -266,11 +273,12 @@ h1{
   background-color: hsla(120, 100%, 25%, .3);
   width: 50vw;
   margin-left: 23vw;
+  margin-top: 6vw;
 }
 
 .contactButton{
 
-  margin-bottom: 1vw;
+  margin-bottom: 2vw;
   
 }
 
