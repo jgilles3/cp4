@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html>
+<HEAD>
+<TITLE>Bee Movie</TITLE>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</HEAD>
+
+<body>
+
+<img class="onion" src="Zwiebel-lineart-300px.png">
+<h1>Moldy Onions</h1>
+
+<nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="movie1.html">Star Wars</a></li>
+  <li class="active"><a href="movie2.html">Bee Movie</a></li>
+  <li><a href="movie3.html">Ratatouille</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="wrapper">
+
+  <div class="app">
+    <h2>Bee Movie</h2>
+    <div class="reviews" v-bind:class="{ 'greenClass': comments2.length === 0 }">
+        <p class="centerMessage" v-if="comments2.length === 0">What did you think of this movie?</p>
+        <div v-for="comment in comments2">
+          <hr v-if="!(comment === comments2[0])">
+      	  <p class="commentBody">{{comment.addedComment}}</p>
+      	  <p class="signature"><i>-- {{comment.author}} ({{comment.date}})</i></p>
+          <button v-on:click="deleteItem2(comment)" class="delete">X</button>
+          <button type="button" style="margin-right: 1vw" v-on:click="addLike2(comment)">
+          <img class="thumbsUp" src="glyphicons-344-thumbs-up.png"> Like
+        </button> Likes: {{comment.score}}
+        </div>
+    </div>
+      <div class="leave-review">
+        <h3 class="inputTitle">Leave a Review</h3>
+      	<form class="lessMargins" v-on:submit.prevent="addComment2">
+      	  <input v-model="addedName" placeholder="Name"></p>
+      	  <textarea v-model="addedComment"></textarea>
+      	  <br/>
+      	  <button class="commentButton" type="submit">Submit</button>
+      	</form>
+      </div>
+  </div>
+
+
+  <div class="movieGrid">
+
+
+    <div class="picture">
+        <img src="https://c2.staticflickr.com/4/3086/2341020773_5a04ff30e0_b.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/3/2281/1788880389_d9c3aaf04f.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Honey_bee_%28Apis_mellifera%29.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://cdn.pixabay.com/photo/2017/01/11/00/04/honey-1970570__180.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/4/3656/3341335784_7284635087_b.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/3/2361/2112977205_7713f6ccc2.jpg">
+
+    </div>
+
+  </div>
+  <div class="quotes">
+
+    <h2>Quotes</h2>
+    <p>"We're very proud of you son and a perfect report card; all B's!"</p>
+    <p class="signature">-Martin Benson</p>
+    <br><br>
+    <p>"They make the honey, we make the money!"</p>
+    <p class="signature">-Beekeepers</p>
+    <br><br>
+    <p>"No, I'm not going to his funeral. Everyone knows you sting someone, you die. You don't waste it on a squirrel. He was such a hothead."</p>
+    <p class="signature">-Barry B. Benson</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Created By: Joseph Gillespie and Jason Cannon</p>
+  <p>See the github <a href="https://github.com/cannonj3/creativeLab3">
+  repository</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>

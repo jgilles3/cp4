@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html>
+<HEAD>
+<TITLE>Star Wars</TITLE>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</HEAD>
+
+<body>
+
+<img class="onion" src="Zwiebel-lineart-300px.png">
+<h1>Moldy Onions</h1>
+
+<nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li class="active"><a href="movie1.html">Star Wars</a></li>
+  <li><a href="movie2.html">Bee Movie</a></li>
+  <li><a href="movie3.html">Ratatouille</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="wrapper">
+  <div class="app">
+    <h2>Star Wars</h2>
+    <div class="reviews" v-bind:class="{ 'greenClass': comments1.length === 0 }">
+        <p class="centerMessage" v-if="comments1.length === 0">What did you think of this movie?</p>
+        <div v-for="comment in comments1">
+          <hr v-if="!(comment === comments1[0])">
+      	  <p class="commentBody">{{comment.addedComment}}</p>
+      	  <p class="signature"><i>-- {{comment.author}} ({{comment.date}})</i></p>
+          <button v-on:click="deleteItem1(comment)" class="delete">X</button>
+          <button type="button" style="margin-right: 1vw" v-on:click="addLike1(comment)">
+          <img class="thumbsUp" src="glyphicons-344-thumbs-up.png"> Like
+        </button> Likes: {{comment.score}}
+      </div>
+    </div>
+      <div class="leave-review">
+        <h3 class="inputTitle">Leave a Review</h3>
+      	<form class="lessMargins" v-on:submit.prevent="addComment1">
+      	  <input v-model="addedName" placeholder="Name"></p>
+      	  <textarea v-model="addedComment"></textarea>
+      	  <br/>
+      	  <button class="commentButton" type="submit">Submit</button>
+      	</form>
+      </div>
+  </div>
+
+  <div class="movieGrid">
+
+
+    <div class="picture">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Star_Wars_Episode_VIII_The_Last_Jedi_Word_Logo_-_White_teaser_poster_variant.svg/800px-Star_Wars_Episode_VIII_The_Last_Jedi_Word_Logo_-_White_teaser_poster_variant.svg.png">
+    </div>
+
+    <div class="picture">
+        <img src="star-wars-2592430_960_720.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/6/5728/22662339190_bb80997ea1_b.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="star-wars-2172953_960_720.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://spikeybits.com/wp-content/uploads/2017/12/R2-D2.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="http://art5.photozou.jp/pub/110/318110/photo/247887354_624.v1515762119.jpg">
+    </div>
+
+  </div>
+  <div class="quotes">
+
+    <h2>Quotes</h2>
+
+    <p>"I've seen this raw strength only once before in Ben Solo. It didn't scare me enough then. It does now."</p>
+    <p class="signature">-Luke Skywalker</p>
+    <br><br>
+    <p>"The Empire, your parents, the Resistance, the Sith, the Jedi... let the past die. Kill it, if you have to. That's the only way to become what you are meant to be."</p>
+    <p class="signature">-Kylo Ren</p>
+    <br><br>
+    <p>"When I found you, I saw what old masters live to see... Raw, untamed power and beyond that, something truly special. The potential of your bloodline."</p>
+    <p class="signature">-Supreme Leader Snoke</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Created By: Joseph Gillespie and Jason Cannon</p>
+  <p>See the github <a href="https://github.com/cannonj3/creativeLab3">
+  repository</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>

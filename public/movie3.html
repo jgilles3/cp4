@@ -1,0 +1,108 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<HEAD>
+<TITLE>Ratatouille</TITLE>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</HEAD>
+
+<body>
+
+<img class="onion" src="Zwiebel-lineart-300px.png">
+<h1>Moldy Onions</h1>
+
+<nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="movie1.html">Star Wars</a></li>
+  <li><a href="movie2.html">Bee Movie</a></li>
+  <li class="active"><a href="movie3.html">Ratatouille</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="wrapper">
+  <div class="app">
+    <h2>Ratatouille</h2>
+    <div class="reviews" v-bind:class="{ 'greenClass': comments3.length === 0 }">
+        <p class="centerMessage" v-if="comments3.length === 0">What did you think of this movie?</p>
+        <div v-for="comment in comments3">
+          <hr v-if="!(comment === comments3[0])">
+      	  <p class="commentBody">{{comment.addedComment}}</p>
+      	  <p class="signature"><i>-- {{comment.author}} ({{comment.date}})</i></p>
+          <button v-on:click="deleteItem3(comment)" class="delete">X</button> 
+          <button type="button" style="margin-right: 1vw" v-on:click="addLike3(comment)">
+          <img class="thumbsUp" src="glyphicons-344-thumbs-up.png"> Like
+        </button> Likes: {{comment.score}}
+        </div>
+    </div>
+      <div class="leave-review">
+        <h3 class="inputTitle">Leave a Review</h3>
+      	<form class="lessMargins" v-on:submit.prevent="addComment3">
+      	  <input v-model="addedName" placeholder="Name"></p>
+      	  <textarea v-model="addedComment"></textarea>
+      	  <br/>
+      	  <button class="commentButton" type="submit">Submit</button>
+      	</form>
+      </div>
+  </div>
+
+  <div class="movieGrid">
+
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/5/4131/4989622320_7b97cce21b_b.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/2/1060/780765111_1193b56b15.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/2/1184/781642430_979cf62ccb.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/2/1264/781641294_4586ed9892.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/8/7698/28350808915_9101e6c916_b.jpg">
+    </div>
+
+    <div class="picture">
+        <img src="https://c1.staticflickr.com/4/3265/2736870502_18cdf026c8_b.jpg">
+    </div>
+
+  </div>
+  <div class="quotes">
+
+    <h2>Quotes</h2>
+    <p>"I don't like food, I love it. If I don't love it, I don't SWALLOW."</p>
+    <p class="signature">-Anton Ego</p>
+    <br><br>
+    <p>"Anyone can cook, but only the fearless can be great."</p>
+    <p class="signature">-Gusteau</p>
+    <br><br>
+    <p>"I think it's apparent that I need to rethink my life a little bit. What's my problem? First of all, I'm a rat. Which means, life is hard. Second, I have a highly developed sense of taste and smell."</p>
+    <p class="signature">-Remy</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Created By: Joseph Gillespie and Jason Cannon</p>
+  <p>See the github <a href="https://github.com/cannonj3/creativeLab3">
+  repository</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
